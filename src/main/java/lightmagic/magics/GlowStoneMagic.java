@@ -6,8 +6,8 @@ package lightmagic.magics;
 
 import bluenova.fairytailcraft.plugin.MagePluginEvent;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.inventory.CraftItemStack;
-import org.bukkit.event.Event.Result;
+import org.bukkit.block.Block;
+import org.bukkit.block.BlockFace;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -23,11 +23,10 @@ public class GlowStoneMagic extends MagePluginEvent {
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
             ItemStack item = event.getItem();
             if(item == null) {
-                item = new CraftItemStack(Material.GLOWSTONE, 1);
                 event.getPlayer().setItemInHand(item);
-                Result useItemInHand = event.useItemInHand();
-                //event.setUseItemInHand(useItemInHand);
-                event.getPlayer().setItemInHand(null);
+                Block clickedBlock = event.getClickedBlock();
+                BlockFace blockFace = event.getBlockFace();
+                clickedBlock.getRelative(blockFace).setType(Material.TORCH);
                 return true;
             }
         }

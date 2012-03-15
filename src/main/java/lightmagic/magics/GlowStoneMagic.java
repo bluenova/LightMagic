@@ -26,7 +26,7 @@ public class GlowStoneMagic extends MagePluginEvent {
                 event.getPlayer().setItemInHand(item);
                 Block clickedBlock = event.getClickedBlock();
                 BlockFace blockFace = event.getBlockFace();
-                clickedBlock.getRelative(blockFace).setType(Material.TORCH);
+                clickedBlock.getRelative(blockFace).setType(Material.GLOWSTONE);
                 return true;
             }
         }

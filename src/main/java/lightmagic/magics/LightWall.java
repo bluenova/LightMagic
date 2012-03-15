@@ -118,7 +118,7 @@ public class LightWall extends MagePluginEvent {
 
                 } else if (dirrect == wallDirections.SOUTHWEST) {
                     MagePluginRegion regio = new MagePluginRegion(new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY(), loc.getBlockZ()), new Location(loc.getWorld(), loc.getBlockX() + 2, loc.getBlockY() + 2, loc.getBlockZ()), loc.getWorld());
-                    MagePluginRegion regio2 = new MagePluginRegion(new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY(), loc.getBlockZ()), new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY() + 2, loc.getBlockZ() + 2), loc.getWorld());
+                    MagePluginRegion regio2 = new MagePluginRegion(new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY(), loc.getBlockZ()), new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY() + 2, loc.getBlockZ() - 2), loc.getWorld());
                     List<Location> locations = regio.getLocations();
                     List<Location> locations2 = regio2.getLocations();
                     locations.addAll(locations2);
@@ -126,7 +126,7 @@ public class LightWall extends MagePluginEvent {
 
                 } else {
                     MagePluginRegion regio = new MagePluginRegion(new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY(), loc.getBlockZ()), new Location(loc.getWorld(), loc.getBlockX() + 2, loc.getBlockY() + 2, loc.getBlockZ()), loc.getWorld());
-                    MagePluginRegion regio2 = new MagePluginRegion(new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY(), loc.getBlockZ()), new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY() + 2, loc.getBlockZ() - 2), loc.getWorld());
+                    MagePluginRegion regio2 = new MagePluginRegion(new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY(), loc.getBlockZ()), new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY() + 2, loc.getBlockZ() + 2), loc.getWorld());
                     List<Location> locations = regio.getLocations();
                     List<Location> locations2 = regio2.getLocations();
                     locations.addAll(locations2);
@@ -134,7 +134,7 @@ public class LightWall extends MagePluginEvent {
                 }
             }
             for (int i = 0; i < wallArr.length; i++) {
-                if (wallArr[i].getBlock().getType() == Material.AIR) {
+                if (wallArr[i].getBlock().getType() == Material.AIR || wallArr[i].getBlock().getType() == Material.GRASS) {
                     wallArr[i].getBlock().setType(Material.GLOWSTONE);
                 }
             }

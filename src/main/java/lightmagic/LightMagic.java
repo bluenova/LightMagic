@@ -9,6 +9,7 @@ package lightmagic;
 import bluenova.fairytailcraft.event.MageEventType;
 import bluenova.fairytailcraft.plugin.MagePlugin;
 import bluenova.fairytailcraft.plugin.MagePluginManager;
+import lightmagic.magics.FairyLaw;
 import lightmagic.magics.GlowStoneMagic;
 import lightmagic.magics.LightWall;
 import lightmagic.magics.SummonGlowstones;
@@ -32,6 +33,7 @@ public class LightMagic implements MagePlugin {
         manager.registerMagic("summontorches", magicName, 10, 20, new SummonTorches(), MageEventType.INTERACT, false);
         manager.registerMagic("summonglowstones", magicName, 15, 25, new SummonGlowstones(), MageEventType.INTERACT, false);
         manager.registerMagic("lightwall", magicName, 20, 30, new LightWall(), MageEventType.INTERACT, false);
+        manager.registerMagic("fairylaw", magicName, 60, 100, new FairyLaw(), MageEventType.INTERACT, true);
         System.out.println("LightMagic Successfully Load!");
     }
 

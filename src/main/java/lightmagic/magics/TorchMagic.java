@@ -21,7 +21,7 @@ import org.bukkit.inventory.ItemStack;
 public class TorchMagic extends MagePluginEvent {
 
     @Override
-    public boolean callPlayerInteractEvent(PlayerInteractEvent event) {
+    public boolean callPlayerInteractEvent(PlayerInteractEvent event, Integer level) {
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
             ItemStack item = event.getItem();
             if(item == null) {

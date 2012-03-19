@@ -21,7 +21,7 @@ import org.bukkit.util.Vector;
 public class LightWall extends MagePluginEvent {
 
     @Override
-    public boolean callPlayerInteractEvent(PlayerInteractEvent event) {
+    public boolean callPlayerInteractEvent(PlayerInteractEvent event, Integer level) {
         if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
             Player player = event.getPlayer();
             Vector dir = player.getTargetBlock(null, 200).getLocation().toVector();

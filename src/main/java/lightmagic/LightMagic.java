@@ -30,14 +30,14 @@ public class LightMagic implements MagePlugin {
     }
 
     public void loadPlugin() {
-        manager.registerMagic("torchmagic", magicName, 1, 10, new TorchMagic(), MageEventType.INTERACT, false);
-        manager.registerMagic("glowstonemagic", magicName, 5, 15, new GlowStoneMagic(), MageEventType.INTERACT, false);
-        manager.registerMagic("summontorches", magicName, 10, 20, new SummonTorches(), MageEventType.INTERACT, false);
-        manager.registerMagic("summonglowstones", magicName, 15, 25, new SummonGlowstones(), MageEventType.INTERACT, false);
-        manager.registerMagic("light", magicName, 20, 25, new light(), MageEventType.INTERACT, false);
-        manager.registerMagic("lightwall", magicName, 20, 30, new LightWall(), MageEventType.INTERACT, false);
-        manager.registerMagic("fairyglitter", magicName, 50, 100, new FairyGlitter(), MageEventType.INTERACT, false);
-        manager.registerMagic("fairylaw", magicName, 60, 100, new FairyLaw(), MageEventType.INTERACT, false);
+        manager.registerMagic("torchmagic", magicName, 1, 10, new TorchMagic(), MageEventType.INTERACT, false,new Long(1000));
+        manager.registerMagic("glowstonemagic", magicName, 5, 15, new GlowStoneMagic(), MageEventType.INTERACT, false,new Long(1000));
+        manager.registerMagic("summontorches", magicName, 10, 20, new SummonTorches(), MageEventType.INTERACT, false,new Long(30000));
+        manager.registerMagic("summonglowstones", magicName, 15, 25, new SummonGlowstones(), MageEventType.INTERACT, false,new Long(30000));
+        manager.registerMagic("light", magicName, 20, 25, new light(), MageEventType.INTERACT, false,new Long(3000));
+        manager.registerMagic("lightwall", magicName, 20, 30, new LightWall(), MageEventType.INTERACT, false,new Long(6000));
+        manager.registerMagic("fairyglitter", magicName, 50, 100, new FairyGlitter(), MageEventType.INTERACT, false,new Long(600000));
+        manager.registerMagic("fairylaw", magicName, 60, 100, new FairyLaw(), MageEventType.INTERACT, false,new Long(3600000));
         System.out.println("LightMagic Successfully Load!");
     }
 

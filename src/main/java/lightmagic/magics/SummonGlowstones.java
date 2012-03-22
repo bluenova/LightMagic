@@ -6,7 +6,6 @@ package lightmagic.magics;
 
 import bluenova.fairytailcraft.plugin.MagePluginEvent;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.inventory.CraftItemStack;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -22,7 +21,7 @@ public class SummonGlowstones extends MagePluginEvent {
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR ) {
             ItemStack item = event.getItem();
             if(item == null) {
-                item = new CraftItemStack(Material.GLOWSTONE, 64);
+                item = new ItemStack(Material.GLOWSTONE, 64);
                 event.getPlayer().setItemInHand(item);
                 return true;
             }
